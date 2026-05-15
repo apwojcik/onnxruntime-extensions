@@ -11,6 +11,9 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "Choose build type: Debug Release RelWithDebInfo." FORCE)
 endif()
 
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/wd4875>")
+add_compile_definitions("$<$<CXX_COMPILER_ID:MSVC>:_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS>")
+
 function(read_version_file major_var minor_var patch_var)
   set(version_file ${PROJECT_SOURCE_DIR}/version.txt)
   file(READ ${version_file} version_file_content)

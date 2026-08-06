@@ -161,8 +161,8 @@ ONNXTensorElementDataType GetOrtDType(){
     return ONNX_TENSOR_ELEMENT_DATA_TYPE_INT64;
   else if constexpr (std::is_same<TT, std::string>::value)
     return ONNX_TENSOR_ELEMENT_DATA_TYPE_STRING;
-  ORTX_CXX_API_THROW("Unexpected type", ORT_RUNTIME_EXCEPTION);
-  return ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT;
+  // ORTX_CXX_API_THROW("Unexpected type", ORT_RUNTIME_EXCEPTION);
+  // return ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT;
 }
 
 class TensorBase : public Arg {
